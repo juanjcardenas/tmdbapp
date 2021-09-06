@@ -2,7 +2,11 @@ package com.example.tmdbapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Splash extends AppCompatActivity {
 
@@ -10,5 +14,15 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        TimerTask splash = new TimerTask() {
+            @Override
+            public void run() {
+                Intent i = new Intent(Splash.this, Principal.class);
+                startActivity(i);
+                finish();
+            }
+        };
+        Timer t = new Timer();
+        t.schedule(splash, 5000);
     }
 }
