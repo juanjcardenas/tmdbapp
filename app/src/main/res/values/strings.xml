@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">tmdbapp</string>
+    <string name="dAutor">©2021 WPOSS</string>
+    <string name="Autor">Juan José Cárdenas Trillos</string>
 </resources>
