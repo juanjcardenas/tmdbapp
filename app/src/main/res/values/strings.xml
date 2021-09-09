@@ -2,4 +2,6 @@
     <string name="app_name">tmdbapp</string>
     <string name="dAutor">©2021 WPOSS</string>
     <string name="Autor">Juan José Cárdenas Trillos</string>
+    <string name="populares">Populares</string>
+    <string name="tendencias">Películas en Tendencias</string>
 </resources>
