@@ -6,7 +6,10 @@
     <color name="teal_200">#02D27C</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="gris">#c2c2c2</color>
     <color name="white">#FFFFFFFF</color>
     <color name="verde">#081F25</color>
+    <color name="verdet">#EE081F25</color>
     <color name="verdeClaro">#02D27C</color>
+    <color name="verdeC">#C8093324</color>
 </resources>

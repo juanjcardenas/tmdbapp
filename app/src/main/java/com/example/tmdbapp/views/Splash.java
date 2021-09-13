@@ -25,6 +25,6 @@ public class Splash extends AppCompatActivity {
             }
         };
         Timer t = new Timer();
-        t.schedule(splash, 5000);
+        t.schedule(splash, 1000);
     }
 }
