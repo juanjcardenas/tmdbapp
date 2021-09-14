@@ -17,12 +17,12 @@
         <LinearLayout
             android:layout_width="185dp"
             android:layout_height="350dp"
-            android:background="@color/verdeClaro"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="185dp"
                 android:layout_height="250dp"
+                android:adjustViewBounds="true"
                 android:background="@drawable/contenedor2" />
 
             <TextView
