@@ -5,6 +5,7 @@
     <string name="populares">Populares</string>
     <string name="calificadas">Películas mejor calificadas</string>
     <string name="buscar">Buscar película, series de TV o persona...</string>
+    <string name="Error">ERROR, no se conectaron los datos...</string>
     <string name="t1">Bienvenidos.</string>
     <string name="t2">Millones de películas, programas de televisión y personas por descubrir. Explora ahora.</string>
 

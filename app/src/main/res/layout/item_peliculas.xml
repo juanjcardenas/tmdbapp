@@ -25,15 +25,18 @@
                 android:layout_width="185dp"
                 android:layout_height="250dp"
                 android:adjustViewBounds="true"
-                android:background="@drawable/contenedor2" />
+
+                android:background="@drawable/contenedor" />
 
             <TextView
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
                 android:text="@string/Autor" />
 
             <TextView
@@ -41,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:textColorHint="@color/white"
+                android:textColor="@color/gris"
                 android:hint="@string/dAutor" />
 
         </LinearLayout>

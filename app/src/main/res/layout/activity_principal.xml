@@ -7,6 +7,8 @@
     android:background="@color/verdet"
     tools:context=".views.PrincipalActivityView">
 
+
+
     <LinearLayout
         android:id="@+id/contenedor1"
         android:layout_width="match_parent"
@@ -53,38 +55,48 @@
         app:layout_constraintBottom_toBottomOf="parent"
         >
 
-        <EditText
-            android:id="@+id/user"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:textColorHint="@color/gris"
             android:hint="@string/buscar"
             android:textColor="@color/white"
-            android:backgroundTint="@color/verde"
-            android:textColorHint="@color/gris"
-            android:drawableEnd="@drawable/ic_lupa"
-            app:endIconMode="clear_text"
-            app:boxBackgroundMode="outline">
-        </EditText>
-    </LinearLayout>
+            android:orientation="horizontal">
 
+        </androidx.appcompat.widget.SearchView>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:textColor="@color/white"
         android:text="@string/populares"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintVertical_bias="0.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contenedor"
         app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/menerror"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Error"
+        android:layout_marginStart="22dp"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -95,9 +107,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textp">
+        app:layout_constraintTop_toBottomOf="@+id/menerror">
 
     </androidx.recyclerview.widget.RecyclerView>
+
 
     <TextView
         android:id="@+id/textp2"

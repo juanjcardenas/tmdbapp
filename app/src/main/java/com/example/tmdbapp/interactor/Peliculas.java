@@ -6,6 +6,7 @@ public class Peliculas {
     private String release_date;
     private Integer vote_count;
 
+
     public Peliculas (){
 
     }
