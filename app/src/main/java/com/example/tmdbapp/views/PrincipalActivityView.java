@@ -2,6 +2,7 @@ package com.example.tmdbapp.views;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tmdbapp.Adapters.AdapterPeliculas;
+import com.example.tmdbapp.Adapters.AdapterVotadas;
 import com.example.tmdbapp.R;
 import com.example.tmdbapp.interactor.Peliculas;
 import com.example.tmdbapp.interfaces.PrincipalPresenter;
@@ -21,9 +23,11 @@ import java.util.ArrayList;
 public class PrincipalActivityView extends AppCompatActivity implements SearchView.OnQueryTextListener, PrincipalView {
 
      private PrincipalPresenter presenter;
-     private RecyclerView recyclerView;
+     private RecyclerView recyclerView, recyclerView2;
      private AdapterPeliculas adapterPeliculas;
+     private AdapterVotadas adapterVotadas;
      private TextView emensaje;
+     private EditText buscador;
      androidx.appcompat.widget.SearchView search;
 
      private PrincipalPresentersImpl principalPresenters;
@@ -34,13 +38,35 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
         setContentView(R.layout.activity_principal);
 
         recyclerView = findViewById(R.id.peliculas);
-        search  = findViewById(R.id.search);
-        search.setOnQueryTextListener(this);
+        recyclerView2 = findViewById(R.id.peliculas2);
+
+        buscador  = findViewById(R.id.buscador);
+//        search.setOnQueryTextListener(this);
         emensaje = findViewById(R.id.menerror);
         presenter = new PrincipalPresentersImpl(this);
         recyclerView.setVisibility(View.VISIBLE);
+        recyclerView2.setVisibility(View.VISIBLE);
+        obtenerVotadas();
+        obtenerPopulares();
 
 
+    }
+
+    @Override
+    public void mostrarVotadas(ArrayList<Peliculas> peliculas) {
+        adapterVotadas = new AdapterVotadas(peliculas, this);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+        emensaje.setVisibility(View.GONE);
+        recyclerView2.setAdapter(adapterVotadas);
+    }
+
+    @Override
+    public void mostrarPopulares(ArrayList<Peliculas> peliculas) {
+        adapterPeliculas = new AdapterPeliculas(peliculas, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        emensaje.setVisibility(View.GONE);
+        recyclerView.setAdapter(adapterPeliculas);
+        recyclerView.setLayoutManager((new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)));
     }
 
     @Override
@@ -50,7 +76,6 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
         emensaje.setVisibility(View.GONE);
         recyclerView.setAdapter(adapterPeliculas);
         recyclerView.setLayoutManager((new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)));
-
     }
 
     @Override
@@ -59,8 +84,19 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
     }
 
     @Override
-    public void obtenerDatos(String q) {
-        presenter.obtenerDatos(q);
+    public void enviarPeliculas(String q) {
+        presenter.obtenerPeliculas(q);
+        search.clearFocus();
+    }
+
+    @Override
+    public void obtenerVotadas() {
+        presenter.obtenerVotadas();
+    }
+
+    @Override
+    public void obtenerPopulares() {
+        presenter.obtenerPopulares();
     }
 
     @Override
@@ -71,7 +107,7 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
 
     @Override
     public boolean onQueryTextSubmit(String q) {
-        obtenerDatos(q);
+        enviarPeliculas(q);
         return false;
     }
 

@@ -4,18 +4,8 @@ public class Peliculas {
     private String poster_path;
     private String original_title;
     private String release_date;
-    private Integer vote_count;
+    private int vote_count;
 
-
-    public Peliculas (){
-
-    }
-    public Peliculas(String results, String poster_path, String original_title, String release_date, Integer vote_count) {
-        this.poster_path = poster_path;
-        this.original_title = original_title;
-        this.release_date = release_date;
-        this.vote_count = vote_count;
-    }
 
     public String getPoster_path() {
         return poster_path;
@@ -41,11 +31,11 @@ public class Peliculas {
         this.release_date = release_date;
     }
 
-    public Integer getVote_count() {
+    public int getVote_count() {
         return vote_count;
     }
 
-    public void setVote_count(Integer vote_count) {
+    public void setVote_count(int vote_count) {
         this.vote_count = vote_count;
     }
 }

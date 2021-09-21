@@ -16,7 +16,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
-        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintVertical_bias="0.03"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +43,12 @@
     <LinearLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
         android:layout_marginStart="20dp"
         android:background="@drawable/contenedor"
         android:layout_marginEnd="20dp"
+        android:gravity="center"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintTop_toBottomOf="@id/contenedor1"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,17 +56,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         >
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search"
+        <EditText
+            android:id="@+id/buscador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="false"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:textSize="15dp"
+            android:backgroundTint="@color/verde"
+            android:drawableEnd="@drawable/ic_lupa"
             android:textColorHint="@color/gris"
             android:hint="@string/buscar"
             android:textColor="@color/white"
-            android:orientation="horizontal">
-
-        </androidx.appcompat.widget.SearchView>
+            />
     </LinearLayout>
 
     <TextView
@@ -117,12 +122,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:text="@string/calificadas"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/peliculas"

@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,18 +15,26 @@
         >
 
         <LinearLayout
-            android:layout_width="185dp"
-            android:layout_height="350dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="10dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="185dp"
-                android:layout_height="250dp"
-                android:adjustViewBounds="true"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
 
-                android:background="@drawable/contenedor" />
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true" />
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/nombre"
@@ -34,18 +42,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
+                android:text="@string/Autor"
                 android:textColor="@color/white"
-                android:textStyle="bold"
                 android:textSize="15dp"
-                android:text="@string/Autor" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:textColor="@color/gris"
-                android:hint="@string/dAutor" />
+                android:hint="@string/dAutor"
+                android:textColor="@color/gris" />
 
         </LinearLayout>
 

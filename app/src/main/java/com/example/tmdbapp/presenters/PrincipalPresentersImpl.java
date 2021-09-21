@@ -31,8 +31,30 @@ public class PrincipalPresentersImpl implements PrincipalPresenter {
     }
 
     @Override
-    public void obtenerDatos(String q) {
-        interactor.obtenerDatos(q);
+    public void procesoExitosoVotadas(ArrayList<Peliculas> peliculas) {
+        view.mostrarVotadas(peliculas);
+
+    }
+
+    @Override
+    public void procesoExitosoPopulares(ArrayList<Peliculas> peliculas) {
+        view.mostrarPopulares(peliculas);
+    }
+
+
+    @Override
+    public void obtenerPeliculas(String q) {
+        interactor.obtenerPeliculas(q);
+    }
+
+    @Override
+    public void obtenerPopulares() {
+        interactor.obtenerPopulares();
+    }
+
+    @Override
+    public void obtenerVotadas() {
+        interactor.obtenerVotadas();
     }
 
 
