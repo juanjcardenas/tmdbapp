@@ -28,7 +28,7 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
      private AdapterVotadas adapterVotadas;
      private TextView emensaje;
      private EditText buscador;
-     androidx.appcompat.widget.SearchView search;
+
 
      private PrincipalPresentersImpl principalPresenters;
 
@@ -39,9 +39,8 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
 
         recyclerView = findViewById(R.id.peliculas);
         recyclerView2 = findViewById(R.id.peliculas2);
-
         buscador  = findViewById(R.id.buscador);
-//        search.setOnQueryTextListener(this);
+//        buscador.setOnQueryTextListener(this);
         emensaje = findViewById(R.id.menerror);
         presenter = new PrincipalPresentersImpl(this);
         recyclerView.setVisibility(View.VISIBLE);
@@ -67,6 +66,7 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
         emensaje.setVisibility(View.GONE);
         recyclerView.setAdapter(adapterPeliculas);
         recyclerView.setLayoutManager((new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)));
+
     }
 
     @Override
@@ -86,7 +86,7 @@ public class PrincipalActivityView extends AppCompatActivity implements SearchVi
     @Override
     public void enviarPeliculas(String q) {
         presenter.obtenerPeliculas(q);
-        search.clearFocus();
+        buscador.clearFocus();
     }
 
     @Override

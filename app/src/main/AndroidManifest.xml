@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Tmdbapp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".views.descripcion"
+            android:name=".views.Descripcion"
             android:exported="true" />
         <activity
             android:name=".views.PrincipalActivityView"

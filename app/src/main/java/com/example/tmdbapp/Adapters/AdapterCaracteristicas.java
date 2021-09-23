@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,9 +46,20 @@ public class AdapterCaracteristicas extends RecyclerView.Adapter<AdapterCaracter
     }
 
 
+
     public class ViewHolderPeliculas extends RecyclerView.ViewHolder {
+
+        TextView tvnombre, tvfecha;
+        ImageView imgc;
+
         public ViewHolderPeliculas(@NonNull View itemView) {
+
             super(itemView);
+            tvnombre = itemView.findViewById(R.id.nombre3);
+            tvfecha = itemView.findViewById(R.id.fecha3);
+            imgc = itemView.findViewById(R.id.img3);
+
+
 
         }
     }

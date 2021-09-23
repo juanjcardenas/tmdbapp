@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,7 +15,8 @@
         >
 
         <LinearLayout
-            android:layout_width="150dp"
+            android:id="@+id/populares"
+            android:layout_width="130dp"
             android:layout_height="300dp"
             android:layout_marginStart="10dp"
             android:orientation="vertical">
@@ -23,7 +24,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
+                android:layout_height="190dp"
                 android:layout_gravity="center"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">

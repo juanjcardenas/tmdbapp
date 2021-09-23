@@ -58,19 +58,23 @@
 
         <EditText
             android:id="@+id/buscador"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:inputType="text"
-            android:imeOptions="actionSearch"
-            android:textSize="15dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/verde"
-            android:drawableEnd="@drawable/ic_lupa"
-            android:textColorHint="@color/gris"
             android:hint="@string/buscar"
+            android:inputType="text"
             android:textColor="@color/white"
-            />
+            android:textColorHint="@color/gris"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_lupa"/>
     </LinearLayout>
 
     <TextView

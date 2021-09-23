@@ -4,8 +4,16 @@ public class Peliculas {
     private String poster_path;
     private String original_title;
     private String release_date;
+    private String overview;
     private int vote_count;
 
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
 
     public String getPoster_path() {
         return poster_path;
