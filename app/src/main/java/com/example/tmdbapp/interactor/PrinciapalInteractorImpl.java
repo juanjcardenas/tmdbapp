@@ -28,17 +28,23 @@ public class PrinciapalInteractorImpl implements PrincipalInteractor {
 
     @Override
     public void obtenerPeliculas(String q) {
+
+        System.out.println("Mensaje--> Obtener peliculas Inter");
         PeliculaService service = retrofit.create(PeliculaService.class);
         Call<PeliculasRespuesta> call=service.obtenerPeliculas(q);
+        System.out.println("Mensaje--> respuesta");
 
         call.enqueue(new Callback<PeliculasRespuesta>() {
 
             @Override
             public void onResponse(Call<PeliculasRespuesta> call, Response<PeliculasRespuesta> response) {
                 if(!response.isSuccessful()){
+                    System.out.println("Mensaje--> proceso fallido");
+
                     procesoFallido();
-                    return;
+
                 }
+                System.out.println("Mensaje--> respuesta exitosa");
                 PeliculasRespuesta datosPeliculas = response.body();
                 ArrayList<Peliculas> peliculas = datosPeliculas.getResults();
 
@@ -49,8 +55,10 @@ public class PrinciapalInteractorImpl implements PrincipalInteractor {
 
             @Override
             public void onFailure(Call<PeliculasRespuesta> call, Throwable t) {
+                System.out.println("Mensaje--> respuesta fallida");
                 procesoFallido();
                 mensajeError();
+
             }
         });
     }

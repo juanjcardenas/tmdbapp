@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class AdapterPeliculas extends RecyclerView.Adapter<AdapterPeliculas.ViewHolderPeliculas> {
 
-    private ArrayList <Peliculas> listPeliculas;
+    private ArrayList<Peliculas> listPeliculas;
     private Context context;
     private LayoutInflater layoutInflater;
 
@@ -49,7 +49,8 @@ public class AdapterPeliculas extends RecyclerView.Adapter<AdapterPeliculas.View
 
         String nombre = peliculas.getOriginal_title();
         String fecha = peliculas.getRelease_date();
-
+        String calificacion = String.valueOf(peliculas.getVote_count());
+        String descripcion = peliculas.getOverview();
 
 
         holder.populares.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +60,8 @@ public class AdapterPeliculas extends RecyclerView.Adapter<AdapterPeliculas.View
                 Intent intent = new Intent(context, Descripcion.class);
                 intent.putExtra("nombre", nombre);
                 intent.putExtra("fecha", fecha);
+                intent.putExtra("calificacion", calificacion);
+                intent.putExtra("descripcion", descripcion);
                 intent.putExtra("img", holder.Urldescripcion);
 
                 context.startActivity(intent);

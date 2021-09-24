@@ -1,6 +1,5 @@
 package com.example.tmdbapp.views;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,17 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.tmdbapp.R;
-import com.example.tmdbapp.interactor.Peliculas;
-
-import java.util.ArrayList;
 
 public class Descripcion extends AppCompatActivity {
 
-    private TextView nombre, fecha;
+    private TextView nombre, fecha, votos, descrip;
     private ImageView img, atras;
     private Bundle bundle;
-    private Context context;
-    private ArrayList<Peliculas> listPeliculas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +27,14 @@ public class Descripcion extends AppCompatActivity {
         img = findViewById(R.id.img3);
         nombre = findViewById(R.id.nombre3);
         fecha = findViewById(R.id.fecha3);
+        votos = findViewById(R.id.votacion);
+        descrip = findViewById(R.id.descripcion);
 
 
         String nombreDescripcion = getIntent().getStringExtra("nombre");
         String fechaDescripcion = getIntent().getStringExtra("fecha");
+        String votacionDescripcion = String.valueOf(getIntent().getStringExtra("calificacion"));
+        String descripcion = getIntent().getStringExtra("descripcion");
 
         img.setImageResource(bundle.getInt("img"));
         String imgobtenido = bundle.getString("img");
@@ -44,6 +43,9 @@ public class Descripcion extends AppCompatActivity {
 
         nombre.setText(nombreDescripcion);
         fecha.setText(fechaDescripcion);
+        votos.setText(votacionDescripcion);
+        descrip.setText(descripcion);
+
 
 
         atras.setOnClickListener(new View.OnClickListener() {

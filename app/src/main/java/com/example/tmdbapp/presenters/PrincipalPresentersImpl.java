@@ -41,9 +41,9 @@ public class PrincipalPresentersImpl implements PrincipalPresenter {
         view.mostrarPopulares(peliculas);
     }
 
-
     @Override
     public void obtenerPeliculas(String q) {
+        System.out.println("Mensaje--> Obtener peliculas presen");
         interactor.obtenerPeliculas(q);
     }
 

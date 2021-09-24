@@ -1,6 +1,6 @@
 package com.example.tmdbapp.interactor;
 
-public class Peliculas {
+public class Peliculas{
     private String poster_path;
     private String original_title;
     private String release_date;

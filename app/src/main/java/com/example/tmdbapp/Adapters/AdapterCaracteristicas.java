@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,52 +14,49 @@ import com.example.tmdbapp.interactor.Peliculas;
 
 import java.util.ArrayList;
 
-public class AdapterCaracteristicas extends RecyclerView.Adapter<AdapterCaracteristicas.ViewHolderPeliculas> {
+public class AdapterCaracteristicas extends RecyclerView.Adapter<AdapterCaracteristicas.ViewHolderDescripcion> {
 
-    ArrayList<Peliculas> listPeliculas;
+    private ArrayList<Peliculas> listcaracteristicas;
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public AdapterCaracteristicas(ArrayList<Peliculas> listPeliculas, Context context){
+
+
+    public AdapterCaracteristicas(ArrayList<Peliculas> listcaracteristicas, Context context){
+
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
-        this.listPeliculas = listPeliculas;
+        this.listcaracteristicas = listcaracteristicas;
 
     }
 
     @NonNull
     @Override
-    public ViewHolderPeliculas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.activity_descripcion, null);
-        return new AdapterCaracteristicas.ViewHolderPeliculas(view);
+    public AdapterCaracteristicas.ViewHolderDescripcion onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = layoutInflater.inflate(R.layout.item_descripcion, null);
+        return  new AdapterCaracteristicas.ViewHolderDescripcion(view);
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderPeliculas holder, int position) {
-
+    public void onBindViewHolder(@NonNull AdapterCaracteristicas.ViewHolderDescripcion holder, int position) {
+        holder.informacion1.setText(listcaracteristicas.get(position).getOriginal_title());
+        holder.informacion2.setText(listcaracteristicas.get(position).getOverview());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listcaracteristicas.size();
     }
 
+    public class ViewHolderDescripcion extends RecyclerView.ViewHolder {
+        private TextView informacion1, informacion2;
+        public ViewHolderDescripcion(@NonNull View itemView) {
 
-
-    public class ViewHolderPeliculas extends RecyclerView.ViewHolder {
-
-        TextView tvnombre, tvfecha;
-        ImageView imgc;
-
-        public ViewHolderPeliculas(@NonNull View itemView) {
 
             super(itemView);
-            tvnombre = itemView.findViewById(R.id.nombre3);
-            tvfecha = itemView.findViewById(R.id.fecha3);
-            imgc = itemView.findViewById(R.id.img3);
-
-
-
+            informacion1= itemView.findViewById(R.id.info1);
+            informacion2= itemView.findViewById(R.id.info2);
         }
     }
 }

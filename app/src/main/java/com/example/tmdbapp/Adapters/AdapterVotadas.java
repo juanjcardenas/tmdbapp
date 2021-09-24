@@ -51,6 +51,8 @@ public class AdapterVotadas extends RecyclerView.Adapter<AdapterVotadas.ViewHold
 
         String nombre = peliculas.getOriginal_title();
         String fecha = peliculas.getRelease_date();
+        String calificacion = String.valueOf(peliculas.getVote_count());
+        String descripcion = peliculas.getOverview();
 
 
 
@@ -62,6 +64,8 @@ public class AdapterVotadas extends RecyclerView.Adapter<AdapterVotadas.ViewHold
                 Intent intent = new Intent(context, Descripcion.class);
                 intent.putExtra("nombre", nombre);
                 intent.putExtra("fecha", fecha);
+                intent.putExtra("calificacion", calificacion);
+                intent.putExtra("descripcion", descripcion);
                 intent.putExtra("img", holder.Urldescripcion);
 
                 context.startActivity(intent);
